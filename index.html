@@ -7,27 +7,77 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
         }
 
         form {
             max-width: 600px;
             margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .team-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
         }
 
         button {
             float: right;
+            padding: 15px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -41,18 +91,26 @@
         <label for="referenceNumber">Reference Number:</label>
         <p id="referenceNumber">123456</p>
 
-        <div class="team-container">
-            <label for="arsenal">Arsenal:</label>
-            <select id="arsenal" name="arsenal">
-                <!-- Options will be added dynamically with JavaScript -->
-            </select>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Predicted Position</th>
+                </tr>
+            </thead>
+            <tbody id="teamsTableBody">
+                <!-- Teams and dropdowns will be added dynamically with JavaScript -->
+            </tbody>
+        </table>
 
-        <!-- Repeat the above div for each team -->
+        <input type="email" id="email" name="email" placeholder="Your Email">
 
         <button type="button" onclick="submitForm()">Submit</button>
-        <input type="email" id="email" name="email" placeholder="Your Email">
     </form>
+
+    <footer>
+        &copy; 2023 English League Betting
+    </footer>
 
     <script src="script.js"></script>
 </body>
