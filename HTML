@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English League Betting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        button {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>English League Betting</h1>
+        <p>Predict the positions of the teams in the English league table standings for the next game week.</p>
+    </header>
+
+    <form id="bettingForm">
+        <label for="referenceNumber">Reference Number:</label>
+        <p id="referenceNumber">123456</p>
+
+        <div class="team-container">
+            <label for="arsenal">Arsenal:</label>
+            <select id="arsenal" name="arsenal">
+                <!-- Options will be added dynamically with JavaScript -->
+            </select>
+        </div>
+
+        <!-- Repeat the above div for each team -->
+
+        <button type="button" onclick="submitForm()">Submit</button>
+        <input type="email" id="email" name="email" placeholder="Your Email">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
