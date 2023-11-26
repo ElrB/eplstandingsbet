@@ -13,21 +13,20 @@ function generateReferenceNumber() {
 
 // Function to initialize the form with team dropdowns
 function initializeForm() {
-    const form = document.getElementById('bettingForm');
     const referenceNumberField = document.getElementById('referenceNumber');
+    const teamsTableBody = document.getElementById('teamsTableBody');
 
     // Set reference number
     referenceNumberField.innerText = generateReferenceNumber();
 
-    // Create dropdowns for each team
+    // Create rows for each team in the table
     teams.forEach((team, index) => {
-        const teamContainer = document.createElement('div');
-        teamContainer.classList.add('team-container');
+        const row = document.createElement('tr');
 
-        const label = document.createElement('label');
-        label.setAttribute('for', team.toLowerCase());
-        label.innerText = `${team}:`;
+        const teamNameCell = document.createElement('td');
+        teamNameCell.innerText = team;
 
+        const positionCell = document.createElement('td');
         const select = document.createElement('select');
         select.setAttribute('id', team.toLowerCase());
         select.setAttribute('name', team.toLowerCase());
@@ -39,15 +38,17 @@ function initializeForm() {
             select.appendChild(option);
         }
 
-        teamContainer.appendChild(label);
-        teamContainer.appendChild(select);
-        form.insertBefore(teamContainer, form.lastChild);
+        positionCell.appendChild(select);
+
+        row.appendChild(teamNameCell);
+        row.appendChild(positionCell);
+
+        teamsTableBody.appendChild(row);
     });
 }
 
 // Function to handle form submission
 function submitForm() {
-    const form = document.getElementById('bettingForm');
     const email = document.getElementById('email').value;
 
     // You can add validation logic here
